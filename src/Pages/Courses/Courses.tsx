@@ -26,8 +26,9 @@ const Courses = () => {
         console.error("Error al realizar la llamada", error);
       }
     };
+
     fetchData();
-  }, []);
+  }, [id]); // Agregar 'id' al arreglo de dependencias  
 
   const getButtonStyles = () => {
     return {
