@@ -6,13 +6,13 @@ class StudentService extends ServiceBase {
   constructor() {
     super(UriBack, "Student");
   }
-  getAll = async (): Promise<IStudent[]> => {
-    const { data } = await this.client.get<IStudent[]>('');
+  getAll = async (courseId: number): Promise<IStudent[]> => {
+    const { data } = await this.client.get<IStudent[]>('', { params: { courseId: courseId } });
     return data;
   };
 
-  post = async (data: Partial<IStudent>): Promise<void> => {
-    await this.client.post('', data);
+  post = async (data: Partial<IStudent>): Promise<{ data: any }> => {
+    return await this.client.post('', data);
   };
 
   update = async (data: Partial<IStudent>): Promise<void> => {

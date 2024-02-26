@@ -14,10 +14,10 @@ const Home = () => {
             try {
                 const response = await ServiceCourse.getAll();
                 setCourses(response);
-                setError(null); // Reiniciar el estado de error si la llamada fue exitosa
+                setError(null);
             } catch (error) {
                 console.error("Error al realizar la llamada", error);
-                setError("Error al cargar los cursos. Por favor, inténtalo de nuevo más tarde."); // Manejo de error de autorización u otros errores
+                setError("Error al cargar los cursos. Por favor, inténtalo de nuevo más tarde.");
             }
         };
         fetchData();
@@ -25,7 +25,6 @@ const Home = () => {
 
     return (
         <div style={{ ...styles.container, display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <p></p>
             {error ? (
                 <p style={styles.paragraph}>{error}</p>
             ) : (
