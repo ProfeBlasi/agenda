@@ -19,7 +19,6 @@ const Courses = () => {
     const fetchData = async () => {
       try {
         if (id !== undefined) {
-          const intId = parseInt(id, 10);
           const response = await ServiceStudent.getAll(parseInt(id, 10));
           setStudents(response);
         }
