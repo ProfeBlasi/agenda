@@ -3,6 +3,6 @@ export interface IGetAllResponse<T> {
   totalCount: number;
 }
 
-const UriBack = "https://mateblasi.somee.com/api/";
+const UriBack = "www.mateblasi.somee.com/api/";
 
 export default UriBack;
